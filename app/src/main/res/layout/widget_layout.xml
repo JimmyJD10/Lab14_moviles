@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@android:color/white"
+    android:gravity="center">
+
+    <!-- Título del Widget -->
+    <TextView
+        android:id="@+id/widget_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resumen de Fitness"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:textColor="#333"/>
+
+    <!-- Información de calorías y pasos -->
+    <TextView
+        android:id="@+id/widget_calories_steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calorías quemadas: 320 kcal | Pasos: 8500"
+        android:textSize="14sp"
+        android:textColor="#666"
+        android:paddingBottom="12dp"
+        android:gravity="center"/>
+
+    <!-- Barra de progreso para mostrar los pasos alcanzados -->
+    <ProgressBar
+        android:id="@+id/widget_steps_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="85"
+        android:max="100"
+        android:progressDrawable="@android:drawable/progress_horizontal"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- Botones de acceso directo -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="12dp">
+
+        <Button
+            android:id="@+id/button_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inicio"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/button_workout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entrenamiento"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/button_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estadísticas"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+
+    <!-- Últimas acciones -->
+    <TextView
+        android:id="@+id/widget_last_actions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Últimas acciones:"
+        android:textSize="14sp"
+        android:textColor="#333"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/widget_action1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- 5 km de carrera completados"
+        android:textSize="12sp"
+        android:textColor="#555"
+        android:paddingBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/widget_action2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- Meta alcanzada: 10,000 pasos"
+        android:textSize="12sp"
+        android:textColor="#555"
+        android:paddingBottom="4dp"/>
+</LinearLayout>

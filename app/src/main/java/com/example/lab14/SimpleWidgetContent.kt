@@ -36,14 +36,18 @@ class SimpleWidgetContent : GlanceAppWidget() {
                 .background(GlanceTheme.colors.background),
             verticalAlignment = Alignment.Top,
             horizontalAlignment = Alignment.CenterHorizontally
+
         ) {
             Text(text = "¿A donde quieres dirigirte?", modifier = GlanceModifier.padding(12.dp))
             Row(horizontalAlignment = Alignment.CenterHorizontally) {
                 Button(
-                    text = "Página Principal",
-                    onClick = actionStartActivity<MainActivity>()
+                    text = "Work",
+                    onClick = actionStartActivity<WorkActivity>()
                 )
-
+                Button(
+                    text = "App Fitness",
+                    onClick = actionStartActivity<WorkActivity>()
+                )
             }
         }
     }

@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permiso para acceso a Internet (si es necesario para widgets dinámicos o funciones adicionales) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Permiso para acceso a red de datos (si es necesario para widgets o funciones específicas) -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab14"
         tools:targetApi="31">
+
+        <!-- Registro de MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -19,11 +27,31 @@
             android:theme="@style/Theme.Lab14">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name=".SimpleWidget"
+
+        <!-- Registro de WorkActivity -->
+        <activity
+            android:name=".WorkActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- Registro de ProgressActivity -->
+        <activity
+            android:name=".ProgressActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- Registro de SettingsActivity -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true">
+        </activity>
+
+        <!-- Registro del widget existente -->
+        <receiver
+            android:name=".SimpleWidget"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -32,6 +60,25 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/simple_widget_info" />
         </receiver>
+
+        <!-- Registro del nuevo widget -->
+        <receiver android:name=".SimpleFitnessWidget"
+            android:exported="true"
+            android:label="Simple Fitness Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/simple_fitness_widget_provider" />
+        </receiver>
+
+
+
+        <!-- Compatibilidad con AppWidgetProvider desde API 23 -->
+        <uses-library
+            android:name="com.google.android.glance.widget"
+            android:required="false" />
 
     </application>
 
